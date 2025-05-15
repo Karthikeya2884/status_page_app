@@ -1,6 +1,6 @@
 # Status Page Project
 
-This project is a simple status page built using Flask for both the backend and frontend. It allows users to view the operational status of various services.
+This project is a simple status page built using Flask for both backend and frontend functionality. It allows users to view the operational status of various services.
 
 ## Features
 - Backend API for fetching service statuses.
@@ -10,15 +10,17 @@ This project is a simple status page built using Flask for both the backend and 
 ## Project Structure
 ```
 .
-├── backend
-│   ├── app.py        # Backend Flask API
-├── frontend
-│   ├── app.py        # Frontend Flask App
-│   ├── templates     # HTML templates for frontend
+├── app/
+│   ├── __init__.py
+│   ├── backend.py
+│   ├── frontend.py
+│   ├── templates/
 │       ├── index.html
 │       ├── service.html
 │       ├── error.html
-├── requirements.txt   # Python dependencies
+├── requirements.txt
+├── render.yaml
+├── README.md
 ```
 
 ## Setup Instructions
@@ -28,38 +30,28 @@ This project is a simple status page built using Flask for both the backend and 
 - `pip` (Python package installer)
 
 ### Install Dependencies
-1. Navigate to the `backend` folder and install dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
-2. Navigate to the `frontend` folder and install dependencies:
+1. Install dependencies using the following command:
     ```bash
     pip install -r requirements.txt
     ```
 
-### Run the Project
-1. Start the **backend server**:
+### Run the Application Locally
+1. Start the Flask app:
     ```bash
-    python backend/app.py
-    ```
-2. Start the **frontend server**:
-    ```bash
-    python frontend/app.py
+    python -m app
     ```
 
-### Access the Application
-- Open your browser and go to `http://localhost:8000`.
+2. Open your browser and go to `http://localhost:5000`.
+
+### Deploy on Render
+1. Commit your code to a GitHub repository.
+2. Log in to [Render](https://render.com).
+3. Create a new **Web Service** and connect your GitHub repository.
+4. Render will automatically detect the `render.yaml` configuration and deploy the app.
 
 ## API Endpoints
 - **GET /api/status**: Returns the status of all services.
 - **GET /api/status/<service_name>**: Returns the status of a specific service.
-
-## Screenshots
-### Homepage
-![Homepage](docs/screenshots/homepage.png)
-
-### Service Status
-![Service Status](docs/screenshots/service_status.png)
 
 ## License
 This project is licensed under the MIT License.
