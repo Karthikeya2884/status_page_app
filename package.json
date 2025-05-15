@@ -1,0 +1,22 @@
+{
+  "name": "status-page-app",
+  "version": "1.0.0",
+  "description": "Simplified version of a status page application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "frontend": "npm run --prefix frontend start",
+    "backend": "npm run --prefix backend dev"
+  },
+  "keywords": [],
+  "author": "Karthikeya2884",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
