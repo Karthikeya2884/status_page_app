@@ -2,10 +2,10 @@
   "name": "status-page-app",
   "version": "1.0.0",
   "description": "Simplified version of a status page application",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "node backend/src/index.js",
-    "dev": "nodemon backend/src/index.js",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
     "frontend": "npm run --prefix frontend start",
     "backend": "npm run --prefix backend dev"
   },
