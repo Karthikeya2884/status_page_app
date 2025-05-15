@@ -1,37 +1,65 @@
-# Status Page Application
+# Status Page Project
 
-This is a simplified version of a status page application.
+This project is a simple status page built using Flask for both the backend and frontend. It allows users to view the operational status of various services.
 
 ## Features
-- User Authentication with Auth0/Clerk
-- Team and Organization Management
-- Service Management (CRUD)
-- Real-time Status Updates with WebSockets
-- Public-facing Status Page
+- Backend API for fetching service statuses.
+- Frontend for displaying statuses in a user-friendly format.
+- Error handling for unavailable services.
+
+## Project Structure
+```
+.
+├── backend
+│   ├── app.py        # Backend Flask API
+├── frontend
+│   ├── app.py        # Frontend Flask App
+│   ├── templates     # HTML templates for frontend
+│       ├── index.html
+│       ├── service.html
+│       ├── error.html
+├── requirements.txt   # Python dependencies
+```
 
 ## Setup Instructions
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Karthikeya2884/status-page-app.git
-   ```
 
-2. Install dependencies:
-   ```bash
-   cd backend && npm install
-   cd ../frontend && npm install
-   ```
+### Prerequisites
+- Python 3.8 or later
+- `pip` (Python package installer)
 
-3. Run the application:
-   ```bash
-   npm run backend
-   npm run frontend
-   ```
+### Install Dependencies
+1. Navigate to the `backend` folder and install dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+2. Navigate to the `frontend` folder and install dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-4. Visit `http://localhost:3000` to view the application.
+### Run the Project
+1. Start the **backend server**:
+    ```bash
+    python backend/app.py
+    ```
+2. Start the **frontend server**:
+    ```bash
+    python frontend/app.py
+    ```
 
-## Deployment
-- Frontend: [Live URL]
-- Backend: [Live URL]
+### Access the Application
+- Open your browser and go to `http://localhost:8000`.
 
-## Loom Demo
-[Watch Demo](#)
+## API Endpoints
+- **GET /api/status**: Returns the status of all services.
+- **GET /api/status/<service_name>**: Returns the status of a specific service.
+
+## Screenshots
+### Homepage
+![Homepage](docs/screenshots/homepage.png)
+
+### Service Status
+![Service Status](docs/screenshots/service_status.png)
+
+## License
+This project is licensed under the MIT License.
