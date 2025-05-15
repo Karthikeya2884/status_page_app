@@ -37,9 +37,6 @@ This project is a simple status page built using Flask for both backend and fron
 1. Start the Flask app:
     ```bash
     python -m app
-   
-   export PYTHONPATH=/home/user/project-root
-   python -c "import app.frontend; print('Frontend module loaded successfully')"
      ```
 
 3. Open your browser and go to `http://localhost:5000`.
