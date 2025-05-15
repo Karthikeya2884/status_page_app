@@ -28,7 +28,6 @@ This project is a simple status page built using Flask for both backend and fron
 ### Prerequisites
 - Python 3.8 or later
 - `pip` (Python package installer)
-   export PYTHONPATH=/home/user/project-root
 
 ### Install Dependencies
 1. Install dependencies using the following command:
@@ -40,9 +39,12 @@ This project is a simple status page built using Flask for both backend and fron
 1. Start the Flask app:
     ```bash
     python -m app
-    ```
+   
+   export PYTHONPATH=/home/user/project-root
+   python -c "import app.frontend; print('Frontend module loaded successfully')"
+     ```
 
-2. Open your browser and go to `http://localhost:5000`.
+3. Open your browser and go to `http://localhost:5000`.
 
 ### Deploy on Render
 1. Commit your code to a GitHub repository.
