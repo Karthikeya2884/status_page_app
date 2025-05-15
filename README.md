@@ -28,6 +28,7 @@ This project is a simple status page built using Flask for both backend and fron
 ### Prerequisites
 - Python 3.8 or later
 - `pip` (Python package installer)
+   export PYTHONPATH=/home/user/project-root
 
 ### Install Dependencies
 1. Install dependencies using the following command:
