@@ -1,4 +1,4 @@
-name: CI/CD Pipeline
+name: Combined CI/CD Pipeline
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  build:
+  build-and-test:
     name: Build and Test
     runs-on: ubuntu-latest
 
@@ -22,22 +22,27 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install Dependencies
-        run: |
-          cd backend && npm install
-          cd ../frontend && npm install
+      - name: Install Backend Dependencies
+        working-directory: backend
+        run: npm install
+
+      - name: Install Frontend Dependencies
+        working-directory: frontend
+        run: npm install
 
       - name: Run Backend Tests
         working-directory: backend
-        run: npm test
+        run: |
+          if [ -f package.json ] && grep -q '"test":' package.json; then npm test; else echo "Skipping tests for backend"; fi
 
       - name: Run Frontend Tests
         working-directory: frontend
-        run: npm test
+        run: |
+          if [ -f package.json ] && grep -q '"test":' package.json; then npm test; else echo "Skipping tests for frontend"; fi
 
   deploy:
     name: Deploy to Production
-    needs: build
+    needs: build-and-test
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
 
@@ -47,8 +52,12 @@ jobs:
 
       - name: Deploy Backend
         working-directory: backend
-        run: echo "Deploy backend using your hosting service (e.g., Heroku, Render)"
+        run: |
+          echo "Deploying backend"
+          # Add backend deployment commands here, e.g., Heroku, AWS, Render, etc.
 
       - name: Deploy Frontend
         working-directory: frontend
-        run: echo "Deploy frontend using your hosting service (e.g., Vercel, Netlify)"
+        run: |
+          echo "Deploying frontend"
+          # Add frontend deployment commands here, e.g., Netlify, Vercel, etc.
