@@ -10,14 +10,12 @@ This project is a simple status page built using Flask for both backend and fron
 ## Project Structure
 ```
 .
-├── app/
-│   ├── __init__.py
-│   ├── backend.py
-│   ├── frontend.py
-│   ├── templates/
-│       ├── index.html
-│       ├── service.html
-│       ├── error.html
+├── templates/
+│   ├── index.html
+│   ├── service.html
+│   ├── error.html
+├── backend.py
+├── frontend.py
 ├── requirements.txt
 ├── render.yaml
 ├── README.md
