@@ -4,7 +4,7 @@
   "description": "Simplified version of a status page application",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node backend/src/index.js",
     "dev": "nodemon index.js",
     "frontend": "npm run --prefix frontend start",
     "backend": "npm run --prefix backend dev"
